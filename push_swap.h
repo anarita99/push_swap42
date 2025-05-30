@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 13:57:27 by adores            #+#    #+#             */
-/*   Updated: 2025/05/30 11:07:49 by adores           ###   ########.fr       */
+/*   Updated: 2025/05/30 14:37:00 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ typedef struct s_stacks_state
 
 typedef struct s_stack
 {
-	int             value;
-	struct s_stack   *next;
+	int				value;
+	struct s_stack	*next;
 }   t_stack;
 
 
@@ -54,7 +54,17 @@ typedef struct s_stack
 //Stack utils
 
 //Commands
-
+void	sa(t_stack **a);
+void	sb(t_stack **b);
+void	ss(t_stack **a, t_stack **b);
+void	pa(t_stack **a, t_stack **b);
+void	pb(t_stack **a, t_stack **b);
+void	ra(t_stack	**a);
+void	rb(t_stack	**b);
+void	rr(t_stack **a, t_stack **b);
+void	rra(t_stack	**a);
+void	rrb(t_stack	**b);
+void	rrr(t_stack **a, t_stack **b);
 //Algorithms
 
 #endif
