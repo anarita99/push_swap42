@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 14:36:04 by adores            #+#    #+#             */
-/*   Updated: 2025/05/30 14:36:33 by adores           ###   ########.fr       */
+/*   Updated: 2025/06/03 12:17:24 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	rra(t_stack	**a)
 void	rrb(t_stack	**b)
 {
 	reverse_rotate_nodes(b);
-	write(1, "rra\n", 4);
+	write(1, "rrb\n", 4);
 }
 
 void	rrr(t_stack **a, t_stack **b)
