@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   list_op.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/17 11:03:13 by adores            #+#    #+#             */
-/*   Updated: 2025/05/30 12:11:57 by adores           ###   ########.fr       */
+/*   Created: 2025/06/06 14:58:55 by adores            #+#    #+#             */
+/*   Updated: 2025/06/06 16:15:10 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-t_list	*ft_lstlast(t_list *lst)
+t_stack	*ft_lstnew(int value)
+{
+	t_stack	*node;
+
+	node = malloc(sizeof(t_stack));
+	if (!node)
+		return (NULL);
+	node-> value = value;
+	node-> next = NULL;
+	node-> prev = NULL;
+	return (node);
+}
+
+t_stack	*ft_lstlast(t_stack *lst)
 {
 	if (!lst)
 		return (NULL);
@@ -20,17 +33,19 @@ t_list	*ft_lstlast(t_list *lst)
 		lst = lst->next;
 	return (lst);
 }
-/* #include <stdio.h>
-int main(void)
+
+void	ft_lstadd_back(t_stack **lst, t_stack *new)
 {
-	t_list *head = NULL;
-	t_list *node1 = ft_lstnew("ANA");
-	t_list *node2 = ft_lstnew("RITA");
-	
-	ft_lstadd_front(&head, node1);
-	ft_lstadd_front(&head, node2);
-	
-	t_list *last = ft_lstlast(head);
-	printf("ULTIMO = %s\n", (char *)last->content);
-	return(0);
-} */
+	t_stack	*last;
+
+	if (!lst || !new)
+		return ;
+	if (*lst == NULL)
+	{
+		*lst = new;
+		return ;
+	}
+	last = ft_lstlast(*lst);
+	last-> next = new;
+	new->prev = last;
+}

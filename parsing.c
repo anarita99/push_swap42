@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 10:05:34 by adores            #+#    #+#             */
-/*   Updated: 2025/06/03 12:45:16 by adores           ###   ########.fr       */
+/*   Updated: 2025/06/06 16:53:38 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,67 +17,40 @@ int	is_number(const char *str)
 	int	i;
 
 	i = 0;
-	if(!str[i])
+	if (!str[i])
 		return (0);
 	if (str[i] == '+' || str[i] == '-')
 		i++;
-	while(str[i])
+	while (str[i])
 	{
-		if(str[i] < '0' || str[i] > '9')
+		if (str[i] < '0' || str[i] > '9')
 			return (0);
 		i++;
 	}
 	return (1);
 }
-t_stack	*add_node(t_stack *head, int value)
-{
-	t_stack	*new;
-	t_stack	*tmp;
 
-	new = malloc(sizeof(t_stack));
-	if(!new)
-		return (NULL);
-	new->value = value;
-	new->next = NULL;
-	if(!head)
-		return (new);
-	tmp = head;
-	while (tmp->next)
-		tmp = tmp->next;
-	tmp->next = new;
-	return (head);
-}
-int	has_duplicate(t_stack *head)
+int	has_duplicate(int num, t_stack *stk)
 {
-	t_stack	*current;
-	t_stack	*check;
-	if(!head)
-		return(0);
-	current = head;
-	while(current)
+	while(stk)
 	{
-		check = current->next;
-		while(check)
-		{
-			if (current->value == check->value)
-				return(1);
-			check = check->next;
-		}
-		current = current->next;
+		if(stk->value == num)
+			return(1);
+		stk = stk->next;
 	}
-	return(0);
+	return (0);
 }
 
 static long	ft_atol(const char *str)
 {
 	long	result;
-	long	sign;
+	int		sign;
 	int		i;
 
 	result = 0;
 	sign = 1;
 	i = 0;
-	while(str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
+	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
 		i++;
 	if (str[i] == '+' || str[i] == '-')
 	{
@@ -85,10 +58,40 @@ static long	ft_atol(const char *str)
 			sign *= -1;
 		i++;
 	}
-	while(str[i] >= '0' && str[i] <= '9')
+	while (str[i] >= '0' && str[i] <= '9')
 	{
 		result = result * 10 + str[i] - 48;
 		i++;
 	}
 	return (sign * result);
+}
+
+int	parse_this_pls(int argc, char **argv, t_stack *a)
+{
+	int	i;
+	long num;
+
+	i = 1;
+	while(i < argc)
+	{
+		if(!is_number(argv[i]))
+		{
+			write(2, "Error\n", 6);
+			return(0);
+		}
+		num = ft_atol(argv[i]);
+		if (num > INT_MAX || num < INT_MIN)
+		{
+			write(2, "Error\n", 6);
+			return(0);
+		}
+		if(has_duplicate((int)num, a))
+		{
+			write(2, "Error\n", 6);
+			return(0);
+		}
+		//add to node
+		//add node to bottom
+		i++;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 13:57:27 by adores            #+#    #+#             */
-/*   Updated: 2025/06/03 12:16:44 by adores           ###   ########.fr       */
+/*   Updated: 2025/06/06 16:16:57 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <unistd.h>
 # include <limits.h>
 # include <stdbool.h>
-# include "libft/libft.h"
 # include "ft_printf/ft_printf.h"
 /* 
 typedef struct s_node
@@ -42,18 +41,14 @@ typedef struct s_stack
 {
 	int				value;
 	struct s_stack	*next;
+	struct s_stack	*prev;
+	
 }   t_stack;
 
+t_stack	*ft_lstnew(int value);
+t_stack	*ft_lstlast(t_stack *lst);
+void	ft_lstadd_back(t_stack **lst, t_stack *new);
 
-//Handle errors
-
-//Stack initiation
-
-//Nodes initiation
-
-//Stack utils
-
-//Commands
 void	sa(t_stack **a);
 void	sb(t_stack **b);
 void	ss(t_stack **a, t_stack **b);

@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 11:49:07 by adores            #+#    #+#             */
-/*   Updated: 2025/06/03 12:24:50 by adores           ###   ########.fr       */
+/*   Updated: 2025/06/06 16:41:44 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int	main(int argc, char **argv)
 
 	a = NULL;
 	b = NULL;
-	if (argc == 1 || (argc == 2 && !argv[1][0]))
-		return (1);
-	else if (argc == 2)
-		argv = ft_split(argv[1], ' ');
+	if (argc < 2)
+		return(0);
+	
+	
 	
 }
