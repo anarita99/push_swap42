@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 10:05:34 by adores            #+#    #+#             */
-/*   Updated: 2025/06/06 16:53:38 by adores           ###   ########.fr       */
+/*   Updated: 2025/06/06 17:04:31 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,11 @@ static long	ft_atol(const char *str)
 	return (sign * result);
 }
 
-int	parse_this_pls(int argc, char **argv, t_stack *a)
+int	parse_this_pls(int argc, char **argv, t_stack **a)
 {
-	int	i;
-	long num;
+	int		i;
+	long	num;
+	t_stack	*new;
 
 	i = 1;
 	while(i < argc)
@@ -90,8 +91,11 @@ int	parse_this_pls(int argc, char **argv, t_stack *a)
 			write(2, "Error\n", 6);
 			return(0);
 		}
-		//add to node
-		//add node to bottom
+		new = ft_lstnew((int)num);
+		if (!new)
+			return (0);
+		ft_lstadd_back(a, new);
 		i++;
 	}
+	return(1);
 }
