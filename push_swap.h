@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 13:57:27 by adores            #+#    #+#             */
-/*   Updated: 2025/06/06 16:16:57 by adores           ###   ########.fr       */
+/*   Updated: 2025/06/09 10:28:31 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ void	rr(t_stack **a, t_stack **b);
 void	rra(t_stack	**a);
 void	rrb(t_stack	**b);
 void	rrr(t_stack **a, t_stack **b);
-//Algorithms
+
+int	parse_this_pls(int argc, char **argv, t_stack **a);
+
 
 #endif
