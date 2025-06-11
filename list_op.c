@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 14:58:55 by adores            #+#    #+#             */
-/*   Updated: 2025/06/06 16:15:10 by adores           ###   ########.fr       */
+/*   Updated: 2025/06/09 15:13:52 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,10 @@ t_stack	*ft_lstnew(int value)
 	node = malloc(sizeof(t_stack));
 	if (!node)
 		return (NULL);
-	node-> value = value;
-	node-> next = NULL;
-	node-> prev = NULL;
+	node->value = value;
+	node->index = -1;
+	node->next = NULL;
+	node->prev = NULL;
 	return (node);
 }
 
@@ -46,6 +47,33 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new)
 		return ;
 	}
 	last = ft_lstlast(*lst);
-	last-> next = new;
+	last->next = new;
 	new->prev = last;
+}
+
+void	free_this_pls(t_stack *stk)
+{
+	t_stack	*tmp;
+
+	if (!stk)
+		return ;
+	while (stk)
+	{
+		tmp = stk->next;
+		free(stk);
+		stk = tmp;
+	}
+}
+
+int	ft_list_size(t_stack *stk)
+{
+	int	count = 0;
+	if(!stk)
+		return(0);
+	while(stk)
+	{
+		count++;
+		stk = stk->next;
+	}
+	return(count);
 }
