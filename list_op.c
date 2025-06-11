@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 14:58:55 by adores            #+#    #+#             */
-/*   Updated: 2025/06/09 15:13:52 by adores           ###   ########.fr       */
+/*   Updated: 2025/06/11 15:39:45 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ t_stack	*ft_lstnew(int value)
 	node->value = value;
 	node->index = -1;
 	node->next = NULL;
-	node->prev = NULL;
 	return (node);
 }
 
@@ -48,7 +47,6 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new)
 	}
 	last = ft_lstlast(*lst);
 	last->next = new;
-	new->prev = last;
 }
 
 void	free_this_pls(t_stack *stk)

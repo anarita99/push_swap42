@@ -6,14 +6,13 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 13:57:27 by adores            #+#    #+#             */
-/*   Updated: 2025/06/11 15:24:58 by adores           ###   ########.fr       */
+/*   Updated: 2025/06/11 15:40:04 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "ft_printf/ft_printf.h"
 # include <limits.h>
 # include <stdbool.h>
 # include <stdlib.h>
@@ -42,7 +41,6 @@ typedef struct s_stack
 	int				value;
 	int				index;
 	struct s_stack	*next;
-	struct s_stack	*prev;
 }					t_stack;
 
 t_stack				*ft_lstnew(int value);
