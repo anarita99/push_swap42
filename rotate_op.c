@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotateoperations.c                                 :+:      :+:    :+:   */
+/*   rotate_op.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 14:34:42 by adores            #+#    #+#             */
-/*   Updated: 2025/06/03 12:16:44 by adores           ###   ########.fr       */
+/*   Updated: 2025/06/11 16:05:40 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ static void	rotate_nodes(t_stack **stk)
 	*stk = first->next;
 	last = ft_lstlast(*stk);
 	last->next = first;
+	first->next = NULL;
 }
 
 void	ra(t_stack	**a)

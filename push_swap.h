@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 13:57:27 by adores            #+#    #+#             */
-/*   Updated: 2025/06/11 15:40:04 by adores           ###   ########.fr       */
+/*   Updated: 2025/06/11 16:03:12 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdbool.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdio.h>
 /*
 typedef struct s_node
 {
@@ -66,4 +67,7 @@ void				assign_this_pls(t_stack *stk, int stack_size);
 
 void	sort_2(t_stack **a);
 void	sort_3(t_stack **a);
+
+
+void print_list(t_stack *stk, char *name);
 #endif
