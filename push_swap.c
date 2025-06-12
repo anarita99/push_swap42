@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 11:49:07 by adores            #+#    #+#             */
-/*   Updated: 2025/06/11 16:06:40 by adores           ###   ########.fr       */
+/*   Updated: 2025/06/12 12:28:49 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int	main(int argc, char **argv)
 			sort_2(&a);
 		else if (size == 3)
 			sort_3(&a);
+		else
+			radix_sort(&a, &b, size);
 	}
 //	print_list(a, "a");
 //	print_list(b, "b");

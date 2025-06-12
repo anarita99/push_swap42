@@ -6,7 +6,7 @@
 #    By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/11 15:03:19 by adores            #+#    #+#              #
-#    Updated: 2025/06/11 15:28:44 by adores           ###   ########.fr        #
+#    Updated: 2025/06/12 12:29:20 by adores           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 SRC := list_op.c parsing.c push_op.c push_swap.c revrot_op.c rotate_op.c \
-	sort_small.c swap_op.c
+	sort_small.c swap_op.c radix_sort.c
 
 OBJ := $(SRC:.c=.o)
 
