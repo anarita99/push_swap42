@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 13:57:27 by adores            #+#    #+#             */
-/*   Updated: 2025/06/16 10:32:00 by adores           ###   ########.fr       */
+/*   Updated: 2025/06/16 14:17:57 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,6 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-/*
-typedef struct s_node
-{
-	int				nb;
-	int				current_position;
-	int				is_cheapest;
-	int				move_cost;
-	int				best_friend_index;
-	int				best_friend_nb;
-	struct s_node	*prev;
-	struct s_node	*next;
-}					t_node;
-
-typedef struct s_stacks_state
-{
-	t_list			*a;
-	t_list			*b;
-}   t_stacks_state */
 
 typedef struct s_stack
 {
@@ -71,5 +53,4 @@ void				sort_4(t_stack **a, t_stack **b);
 void				sort_5(t_stack **a, t_stack **b);
 void				radix_sort(t_stack **a, t_stack **b, int size);
 
-// void print_list(t_stack *stk, char *name);
 #endif
