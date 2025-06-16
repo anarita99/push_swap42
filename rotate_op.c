@@ -6,12 +6,11 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 14:34:42 by adores            #+#    #+#             */
-/*   Updated: 2025/06/11 16:05:40 by adores           ###   ########.fr       */
+/*   Updated: 2025/06/16 10:41:53 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 static void	rotate_nodes(t_stack **stk)
 {

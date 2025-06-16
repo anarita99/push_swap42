@@ -1,42 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   radix_sort.c                                       :+:      :+:    :+:   */
+/*   assign.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/12 11:27:41 by adores            #+#    #+#             */
-/*   Updated: 2025/06/16 10:42:02 by adores           ###   ########.fr       */
+/*   Created: 2025/06/16 10:45:15 by adores            #+#    #+#             */
+/*   Updated: 2025/06/16 10:45:52 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	radix_sort(t_stack **a, t_stack **b, int size)
+void	assign_this_pls(t_stack *stk, int stack_size)
 {
-	int	max_num;
-	int	max_bits;
-	int	i;
-	int	j;
+	int		index;
+	t_stack	*ptr;
+	t_stack	*min;
+	int		min_value;
 
-	max_num = size - 1;
-	max_bits = 0;
-	while((max_num >> max_bits) != 0)
-		max_bits++;
-	i = 0;
-	while(i < max_bits)
+	index = 0;
+	while(index < stack_size)
 	{
-		j = 0;
-		while (j < size)
+		ptr = stk;
+		min = NULL;
+		min_value = INT_MAX;
+		while(ptr)
 		{
-			if((((*a)->index >> i) & 1) == 0)
-				pb(a, b);
-			else
-				ra(a);
-			j++;
+			if(ptr->index == -1 && ptr->value < min_value)
+			{
+				min_value = ptr->value;
+				min = ptr;
+			}
+			ptr = ptr->next;
 		}
-		while(*b)
-			pa(a, b);
-		i++;
+		if (min)
+			min->index = index;
+		index++;
 	}
 }

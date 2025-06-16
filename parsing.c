@@ -6,13 +6,13 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 10:05:34 by adores            #+#    #+#             */
-/*   Updated: 2025/06/11 15:23:02 by adores           ###   ########.fr       */
+/*   Updated: 2025/06/16 11:01:27 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_number(const char *str)
+static int	is_number(const char *str)
 {
 	int	i;
 
@@ -30,7 +30,7 @@ int	is_number(const char *str)
 	return (1);
 }
 
-int	has_duplicate(int num, t_stack *stk)
+static int	has_duplicate(int num, t_stack *stk)
 {
 	while (stk)
 	{
@@ -66,6 +66,16 @@ static long	ft_atol(const char *str)
 	return (sign * result);
 }
 
+static int check_input(const char *str, long num, t_stack *a)
+{
+	if(!is_number(str) || num < INT_MIN || num > INT_MAX || has_duplicate((int)num, a))
+	{
+		write(1, "Error\n", 6);
+		return (1);
+	}
+	return(0);
+}
+
 int	parse_this_pls(int argc, char **argv, t_stack **a)
 {
 	int		i;
@@ -75,22 +85,9 @@ int	parse_this_pls(int argc, char **argv, t_stack **a)
 	i = 1;
 	while (i < argc)
 	{
-		if (!is_number(argv[i]))
-		{
-			write(2, "Error\n", 6);
-			return (1);
-		}
 		num = ft_atol(argv[i]);
-		if (num > INT_MAX || num < INT_MIN)
-		{
-			write(2, "Error\n", 6);
-			return (1);
-		}
-		if (has_duplicate((int)num, *a))
-		{
-			write(2, "Error\n", 6);
-			return (1);
-		}
+		if (check_input(argv[1], num, *a))
+			return(1);
 		new = ft_lstnew((int)num);
 		if (!new)
 			return (1);
@@ -98,32 +95,4 @@ int	parse_this_pls(int argc, char **argv, t_stack **a)
 		i++;
 	}
 	return (0);
-}
-
-void	assign_this_pls(t_stack *stk, int stack_size)
-{
-	int		index;
-	t_stack	*ptr;
-	t_stack	*min;
-	int		min_value;
-
-	index = 0;
-	while(index < stack_size)
-	{
-		ptr = stk;
-		min = NULL;
-		min_value = INT_MAX;
-		while(ptr)
-		{
-			if(ptr->index == -1 && ptr->value < min_value)
-			{
-				min_value = ptr->value;
-				min = ptr;
-			}
-			ptr = ptr->next;
-		}
-		if (min)
-			min->index = index;
-		index++;
-	}
 }

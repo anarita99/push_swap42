@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 11:49:07 by adores            #+#    #+#             */
-/*   Updated: 2025/06/12 15:23:22 by adores           ###   ########.fr       */
+/*   Updated: 2025/06/16 11:02:41 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,20 +37,8 @@ int	main(int argc, char **argv)
 		else
 			radix_sort(&a, &b, size);
 	}
-	//print_list(a, "a");
-	//print_list(b, "b");
 	free_this_pls(a);
 	if (b)
     	free_this_pls(b);
 	return(0);
-}
-void print_list(t_stack *stk, char *name)
-{
-	printf("%s: ", name);
-	while (stk)
-	{
-		printf("%p(%d) -> ", (void*)stk, stk->value);
-		stk = stk->next;
-	}
-	printf("NULL\n");
 }

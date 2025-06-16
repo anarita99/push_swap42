@@ -1,42 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   radix_sort.c                                       :+:      :+:    :+:   */
+/*   sort_5.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/12 11:27:41 by adores            #+#    #+#             */
-/*   Updated: 2025/06/16 10:42:02 by adores           ###   ########.fr       */
+/*   Created: 2025/06/16 10:26:55 by adores            #+#    #+#             */
+/*   Updated: 2025/06/16 10:41:36 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	radix_sort(t_stack **a, t_stack **b, int size)
+static void	push_min_to_b(t_stack **a, t_stack **b)
 {
-	int	max_num;
-	int	max_bits;
-	int	i;
-	int	j;
+	int	min_pos;
 
-	max_num = size - 1;
-	max_bits = 0;
-	while((max_num >> max_bits) != 0)
-		max_bits++;
-	i = 0;
-	while(i < max_bits)
+	min_pos = get_min_index_pos(*a);
+	while(min_pos != 0)
 	{
-		j = 0;
-		while (j < size)
-		{
-			if((((*a)->index >> i) & 1) == 0)
-				pb(a, b);
-			else
-				ra(a);
-			j++;
-		}
-		while(*b)
-			pa(a, b);
-		i++;
+		if (min_pos <= 2)
+			ra(a);
+		else
+			rra(a);
+		min_pos = get_min_index_pos(*a);
 	}
+	pb(a , b);
 }
+
+void	sort_5(t_stack **a, t_stack **b)
+{
+	push_min_to_b(a, b);
+	push_min_to_b(a, b);
+	sort_3(a);
+	if ((*b)->index < (*b)->next->index)
+		sb(b);
+	pa(a, b);
+	pa(a, b);
+}
+
