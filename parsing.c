@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 10:05:34 by adores            #+#    #+#             */
-/*   Updated: 2025/06/16 11:01:27 by adores           ###   ########.fr       */
+/*   Updated: 2025/06/16 14:08:07 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,14 +66,15 @@ static long	ft_atol(const char *str)
 	return (sign * result);
 }
 
-static int check_input(const char *str, long num, t_stack *a)
+static int	check_input(const char *str, long num, t_stack *a)
 {
-	if(!is_number(str) || num < INT_MIN || num > INT_MAX || has_duplicate((int)num, a))
+	if (!is_number(str) || num < INT_MIN || num > INT_MAX
+		|| has_duplicate((int)num, a))
 	{
 		write(1, "Error\n", 6);
 		return (1);
 	}
-	return(0);
+	return (0);
 }
 
 int	parse_this_pls(int argc, char **argv, t_stack **a)
@@ -87,7 +88,7 @@ int	parse_this_pls(int argc, char **argv, t_stack **a)
 	{
 		num = ft_atol(argv[i]);
 		if (check_input(argv[1], num, *a))
-			return(1);
+			return (1);
 		new = ft_lstnew((int)num);
 		if (!new)
 			return (1);

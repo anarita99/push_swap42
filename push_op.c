@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 14:33:11 by adores            #+#    #+#             */
-/*   Updated: 2025/06/16 10:42:14 by adores           ###   ########.fr       */
+/*   Updated: 2025/06/16 14:11:07 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 void	pa(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp;
-	if(!b || !*b)
+
+	if (!b || !*b)
 		return ;
 	tmp = (*b)->next;
 	(*b)->next = *a;
@@ -27,7 +28,8 @@ void	pa(t_stack **a, t_stack **b)
 void	pb(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp;
-	if(!a || !*a)
+
+	if (!a || !*a)
 		return ;
 	tmp = (*a)->next;
 	(*a)->next = *b;

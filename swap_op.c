@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swapoperations.c                                   :+:      :+:    :+:   */
+/*   swap_op.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 13:58:40 by adores            #+#    #+#             */
-/*   Updated: 2025/06/03 12:19:50 by adores           ###   ########.fr       */
+/*   Updated: 2025/06/16 14:16:08 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	swap_nodes(t_stack	**stk)
 	t_stack	*first;
 	t_stack	*second;
 
-	if (!stk || !*stk || !(*stk) -> next)
+	if (!stk || !*stk || !(*stk)->next)
 		return ;
 	first = *stk;
 	second = first -> next;

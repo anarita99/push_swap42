@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 10:26:55 by adores            #+#    #+#             */
-/*   Updated: 2025/06/16 10:41:36 by adores           ###   ########.fr       */
+/*   Updated: 2025/06/16 14:13:50 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	push_min_to_b(t_stack **a, t_stack **b)
 	int	min_pos;
 
 	min_pos = get_min_index_pos(*a);
-	while(min_pos != 0)
+	while (min_pos != 0)
 	{
 		if (min_pos <= 2)
 			ra(a);
@@ -25,7 +25,7 @@ static void	push_min_to_b(t_stack **a, t_stack **b)
 			rra(a);
 		min_pos = get_min_index_pos(*a);
 	}
-	pb(a , b);
+	pb(a, b);
 }
 
 void	sort_5(t_stack **a, t_stack **b)
@@ -38,4 +38,3 @@ void	sort_5(t_stack **a, t_stack **b)
 	pa(a, b);
 	pa(a, b);
 }
-

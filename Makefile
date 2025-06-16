@@ -6,7 +6,7 @@
 #    By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/11 15:03:19 by adores            #+#    #+#              #
-#    Updated: 2025/06/12 12:29:20 by adores           ###   ########.fr        #
+#    Updated: 2025/06/16 11:12:43 by adores           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,8 @@ NAME = push_swap
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-SRC := list_op.c parsing.c push_op.c push_swap.c revrot_op.c rotate_op.c \
-	sort_small.c swap_op.c radix_sort.c
+SRC := assign.c list_op.c parsing.c push_op.c push_swap.c revrot_op.c rotate_op.c \
+	sort_small.c swap_op.c radix_sort.c sort_5.c
 
 OBJ := $(SRC:.c=.o)
 
