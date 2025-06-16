@@ -6,11 +6,25 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 11:49:07 by adores            #+#    #+#             */
-/*   Updated: 2025/06/16 11:02:41 by adores           ###   ########.fr       */
+/*   Updated: 2025/06/16 11:11:01 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	do_sort(t_stack **a, t_stack **b, int size)
+{
+	if (size == 2)
+		sort_2(a);
+	else if (size == 3)
+		sort_3(a);
+	else if (size == 4)
+		sort_4(a, b);
+	else if (size == 5)
+		sort_5(a, b);
+	else
+		radix_sort(a, b, size);
+}
 
 int	main(int argc, char **argv)
 {
@@ -26,19 +40,10 @@ int	main(int argc, char **argv)
 	{
 		assign_this_pls(a, ft_list_size(a));
 		size = ft_list_size(a);
-		if (size == 2)
-			sort_2(&a);
-		else if (size == 3)
-			sort_3(&a);
-		else if (size == 4)
-			sort_4(&a, &b);
-		else if (size == 5)
-			sort_5(&a, &b);
-		else
-			radix_sort(&a, &b, size);
+		do_sort(&a, &b, size);
 	}
 	free_this_pls(a);
 	if (b)
-    	free_this_pls(b);
+		free_this_pls(b);
 	return(0);
 }
