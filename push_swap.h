@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 13:57:27 by adores            #+#    #+#             */
-/*   Updated: 2025/06/12 12:28:30 by adores           ###   ########.fr       */
+/*   Updated: 2025/06/12 15:23:05 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,9 @@ void				assign_this_pls(t_stack *stk, int stack_size);
 
 void	sort_2(t_stack **a);
 void	sort_3(t_stack **a);
+void	sort_4(t_stack **a, t_stack **b);
+void	sort_5(t_stack **a, t_stack **b);
 void	radix_sort(t_stack **a, t_stack **b, int size);
 
-void print_list(t_stack *stk, char *name);
+//void print_list(t_stack *stk, char *name);
 #endif
