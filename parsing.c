@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 10:05:34 by adores            #+#    #+#             */
-/*   Updated: 2025/06/16 14:08:07 by adores           ###   ########.fr       */
+/*   Updated: 2025/06/17 11:02:19 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ static int	is_number(const char *str)
 		return (0);
 	if (str[i] == '+' || str[i] == '-')
 		i++;
+	if (!str[i])
+		return (0);
 	while (str[i])
 	{
 		if (str[i] < '0' || str[i] > '9')
@@ -71,7 +73,7 @@ static int	check_input(const char *str, long num, t_stack *a)
 	if (!is_number(str) || num < INT_MIN || num > INT_MAX
 		|| has_duplicate((int)num, a))
 	{
-		write(1, "Error\n", 6);
+		write(2, "Error\n", 6);
 		return (1);
 	}
 	return (0);
@@ -87,7 +89,7 @@ int	parse_this_pls(int argc, char **argv, t_stack **a)
 	while (i < argc)
 	{
 		num = ft_atol(argv[i]);
-		if (check_input(argv[1], num, *a))
+		if (check_input(argv[i], num, *a))
 			return (1);
 		new = ft_lstnew((int)num);
 		if (!new)
